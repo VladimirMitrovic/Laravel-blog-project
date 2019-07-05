@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// FRONT END
+Route::resource('/', 'FrontendController');
+Route::get('/post/{id}', 'FrontendController@show');
+
+// ADMIN
+Route::resource('/administrator', 'AdminController');
+
+// AUTH 
+Auth::routes();
+//Route::get('/home', 'HomeController@index')->name('home');
