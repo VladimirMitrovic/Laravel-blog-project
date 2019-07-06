@@ -1,0 +1,11 @@
+header.masthead {background-attachment: fixed;height: 450px;background-position: bottom center;}
+.post-preview>a>.post-title {font-size: 28px;margin-top: 0px;}
+.post-preview>a>.post-subtitle {font-size: 22px; margin-bottom: 15px;}
+.post-preview>.post-meta{font-size: 15px;}
+.post-heading>h2.subheading {font-weight: 500; margin: 0 0 20px 0; border-left: 5px solid #b5b5b5; padding: 0 25px 0;}
+.post-heading>span.meta{font-style: italic;margin-top: 0;color: #868e96;}
+.card>h5.card-header{font-weight: lighter;font-style: italic;}
+.loginBtn {padding: 5px 10px; font-weight: 500;}
+.loginForm {padding: 50px 0;}
+h1.lead{margin: 0 0 20px 0;}
+footer {background: #212529;padding: 20px 0;}
