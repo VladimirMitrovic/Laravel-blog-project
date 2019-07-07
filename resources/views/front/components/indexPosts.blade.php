@@ -14,12 +14,12 @@
             </h3>
           </a>
           <p class="post-meta">Posted by <a href="#">{{ $post->user->name }}</a> on {{ date('d.m.Y',strtotime($post->created_at)) }}</p>
-        <!-- /  <a href="javascript:void(0)" class="postDelete" data-id="{{$post->id}}">Delete</a> -->
-          <button class="postDelete btn btn-warning" data-id="{{$post->id}}">Delete</button>
+        
         </div>
     </div>
   </div> 
         <hr>
   @endforeach
 @endisset
+{{ $posts->links() }}
 

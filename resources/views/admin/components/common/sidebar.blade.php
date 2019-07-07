@@ -18,10 +18,10 @@
                 </a>
                 <ul class="ml-menu">
                     <li>
-                        <a href="">Add</a>
+                        <a href="{{ route ('administrator.create') }}">Add</a>
                     </li>
                     <li>
-                        <a href="">Show</a>
+                        <a href="{{ route ('administrator.index') }}">Show</a>
                     </li>
                 </ul>
             </li>

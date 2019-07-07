@@ -1,6 +1,6 @@
 @extends("layouts.admin")
 @section("styles")
-    <link rel="stylesheet" href="{{ asset("summernote/summernote.css") }}">
+    <link rel="stylesheet" href="{{ asset('summernote/summernote.css') }}">
 @endsection
 @section("content")
     @empty($form)
@@ -24,7 +24,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset("summernote/summernote.js") }}"></script>
+    <script src="{{ asset('summernote/summernote.js') }}"></script>
     <script>
         $("#content").summernote();
     </script>

@@ -8,6 +8,7 @@ use App\Models\postModel;
 
 class AdminController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +30,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $this->data['form'] = "insert";
+        return view('admin.pages.posts', $this->data);
     }
 
     /**
@@ -51,7 +53,16 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        // $this->data['form'] = 'edit';
+        // $user = new userModel;
+        // $users = $user->all();
+        // $posts = postModel::with('user')->first();     
+        // return view('admin.pages.posts', compact('users','posts'));
+
+        $this->data['form'] = 'edit';
+        $this->data['post'] = postModel::find($id);
+        return view('admin.pages.posts', $this->data);
+
     }
 
     /**

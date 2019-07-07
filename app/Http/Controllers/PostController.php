@@ -15,7 +15,18 @@ class PostController extends Controller
      */
     public function index()
     {
-        return response()->json(postModel::get(), 200);
+        $posts = postModel::with('user')->get();
+        return response()->json(['posts' => $posts], 200);
+    }
+
+    public function authorPosts($id)
+    {
+        if($id != 0){
+        $posts = postModel::with('user')->where('user_id','=',$id)->get();
+        return response()->json(['author_posts' => $posts], 200);
+    }
+    $posts = postModel::with('user')->get();
+    return response()->json(['author_posts' => $posts], 200);
     }
 
     /**
@@ -98,5 +109,6 @@ class PostController extends Controller
         $post->delete();
         $posts = postModel::with('user')->get();
         return response()->json(['posts' => $posts], 200);
+        
     }
 }

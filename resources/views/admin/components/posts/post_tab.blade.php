@@ -1,6 +1,8 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
+
+
             <div class="header">
                 <h2>
                     {{ $post->title }}
@@ -11,8 +13,8 @@
                             <i class="material-icons">more_vert</i>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="">Edit</a></li>
-                            <li><a href="">Delete</a></li>
+                        <li><a href="{{ route('administrator.show', ['id' => $post->id]) }}">Edit</a></li>
+                        <li><a href="javascript:void(0)" class="postDelete" data-id="{{ $post->id }}">Delete</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -33,10 +35,12 @@
                         </p>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="profile{{ $post->id }}">
-                        <img src="{{ asset($post->file) }}" alt="{{ $post->alt }}">
+                        <img src="{{ asset('/images/'.$post->featured_image) }}" alt="{{ $post->title }}">
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>

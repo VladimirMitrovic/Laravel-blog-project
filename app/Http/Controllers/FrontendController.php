@@ -15,11 +15,15 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $user = new userModel;
-        $users = $user->all();
+        $posts = postModel::with('user')->get();
+        return response()->json(['posts' => $posts], 200);
+    }
 
-        $posts = postModel::with('user')->get();     
-         return view('front.pages.index',compact('users','posts'));
+    public function users()
+    {
+        $users = new userModel;
+        $users = $users->get();
+        return view('front.pages.index',compact('users'));
     }
 
     /**

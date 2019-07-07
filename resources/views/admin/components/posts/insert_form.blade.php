@@ -4,7 +4,7 @@
 
         <p class="lead">Add New Blog Post</p>
 
-        <form action="{{ route("posts.store") }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('administrator.store') }}" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
@@ -46,7 +46,7 @@
 
                 <input type="submit" class="btn btn-primary waves-amber" value="Add">
 
-                <a href="{{ route("posts.index") }}" class="btn btn-warning waves-effect">Cancel</a>
+                <a href="{{ route('administrator.index') }}" class="btn btn-warning waves-effect">Cancel</a>
 
             </div>
 

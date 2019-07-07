@@ -12,11 +12,16 @@
 */
 
 // FRONT END
-Route::resource('/', 'FrontendController');
+Route::view('/', 'front.pages.index');
+
+Route::get('/', 'FrontendController@users');
+
+
 Route::get('/post/{id}', 'FrontendController@show');
 
 // ADMIN
 Route::resource('/administrator', 'AdminController');
+
 
 // AUTH 
 Auth::routes();

@@ -9,7 +9,8 @@
 <!-- Custom scripts for this template -->
 <script src="{{ asset('js/clean-blog.min.js') }}"></script>
 
-<script src="{{ asset('js/ajax.js') }}"></script>
+<script src="{{ asset('js/ajax_index.js') }}"></script>
+<script src="{{ asset('js/ajaxDelete.js') }}"></script>
 <script>
  $.ajaxSetup({
           headers: {

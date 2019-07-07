@@ -32,4 +32,6 @@ class postModel extends Model
     public function user(){
         return $this->belongsTo(userModel::class, 'user_id', 'id');
     }
+
+    
 }

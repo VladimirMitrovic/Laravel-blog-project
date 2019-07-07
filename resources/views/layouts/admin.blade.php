@@ -23,8 +23,8 @@
                                             <i class="material-icons">more_vert</i>
                                         </a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li><a href="">Show All</a></li>
-                                            <li><a href="">Add New</a></li>
+                                            <li><a href="{{ route ('administrator.index') }}">Show All</a></li>
+                                            <li><a href="{{ route ('administrator.create') }}">Add New</a></li>
                                         </ul>
                                     </li>
                                 </ul>
