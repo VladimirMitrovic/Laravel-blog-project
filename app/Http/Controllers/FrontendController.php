@@ -21,8 +21,7 @@ class FrontendController extends Controller
 
     public function users()
     {
-        $users = new userModel;
-        $users = $users->get();
+        $users = userModel::all();
         return view('front.pages.index',compact('users'));
     }
 

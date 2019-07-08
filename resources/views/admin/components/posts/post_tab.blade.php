@@ -5,7 +5,8 @@
 
             <div class="header">
                 <h2>
-                    {{ $post->title }}
+                    {{ $post->title }}<br> 
+                    <small>published by {{ $post->user->name }}</small>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -35,7 +36,7 @@
                         </p>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="profile{{ $post->id }}">
-                        <img src="{{ asset('/images/'.$post->featured_image) }}" alt="{{ $post->title }}">
+                        <img src="{{ asset('/images/'.$post->featured_image) }}" alt="{{ $post->title }}" class="imgPreview">
                     </div>
                 </div>
             </div>

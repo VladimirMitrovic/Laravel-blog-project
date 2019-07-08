@@ -23,6 +23,7 @@
 
 <!-- Custom Ajax -->
 <script src="{{ asset('js/ajaxDelete.js') }}"></script>
+<script src="{{ asset('js/ajax_insert.js') }}"></script>
 
 <!-- Demo Js -->
 <script src="{{ asset('admin/js/demo.js') }}"></script>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\postModel;
+use App\Models\userModel;
 
 class PostController extends Controller
 {
@@ -46,9 +48,10 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {          
+
         $post = postModel::create($request->all());
-        return response()->json($post, 201);
+        return response()->json($post, 200);
     }
 
     /**

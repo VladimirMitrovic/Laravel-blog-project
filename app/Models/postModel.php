@@ -14,8 +14,6 @@ class postModel extends Model
         'content',
         'description',
         'featured_image',
-        'created_at',
-        'updated_at',
         'user_id'
     ];
     public $timestamps = false;
@@ -33,5 +31,5 @@ class postModel extends Model
         return $this->belongsTo(userModel::class, 'user_id', 'id');
     }
 
-    
+   
 }
