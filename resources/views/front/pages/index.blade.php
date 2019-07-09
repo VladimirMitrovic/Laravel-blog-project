@@ -27,9 +27,13 @@
        
   @endisset
 
-      <div class="col-lg-9 col-md-9 mx-auto" id="indexPosts">
+      <div class="col-lg-9 col-md-9 mx-auto">
+        <div id="indexPosts">
 
+        </div>
+        <div id="pagination"></div>
       </div>
+     
       @include("front.components.sidebar")      
 
     </div>

@@ -12,9 +12,9 @@ $(document).ready(function(){
          data:{id:id},
          success:function(data){
             console.log(data);
-  //          clearPosts();
             getPosts();
-
+            message(data);
+           
          },
          error: function(xhr, statusText, error){
           var status = xhr.status;
@@ -23,11 +23,8 @@ $(document).ready(function(){
       });
   });
 
-  function clearPosts(){
-   var content="";
-   content += ``;
-   $('.card').html(content);
-  }
+
+
   function getPosts(){
    $.ajax({
       url: base_url+"/api/post",
@@ -35,6 +32,7 @@ $(document).ready(function(){
       dataType: 'json',
       success:function(data){
         console.log(data);
+      
         var content="";
         $.each(data.posts, function(index,post){
            var dateOld = post.created_at;
@@ -82,6 +80,7 @@ $(document).ready(function(){
             </div>
          </div>
          `;
+        
       });
       $('.card').html(content);
       },
@@ -90,6 +89,14 @@ $(document).ready(function(){
         console.log(status);
         }
      });
+   };
+
+    function message(data){
+      var successHtml = '<div class="alert alert-success">'+
+      '<button type="button" class="close" data-dismiss="alert">&times;</button>'+
+      '<strong><i class="glyphicon glyphicon-ok-sign push-5-r"></</strong> '+ data.message +
+      '</div>';
+      $('.messages').html(successHtml);
    }
 
 

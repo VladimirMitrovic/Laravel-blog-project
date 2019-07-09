@@ -16,7 +16,7 @@ class postModel extends Model
         'featured_image',
         'user_id'
     ];
-    public $timestamps = false;
+  //  public $timestamps = false;
 
     public function posts(){
         return $posts = $postModel::all();

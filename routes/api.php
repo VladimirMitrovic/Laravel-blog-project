@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Models\postModel;
+use App\Http\Resources\PostResource;
+use App\Http\Resources\PostCollection;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('/post', 'postController');
 Route::get('/author/posts/{user_id}', 'postController@authorPosts');
 
-//Route::apiResource('/admin/post', 'AdminController')->name('post.store','admin.insert.post');
+Route::get('/posts/all', function(){
+    return new PostCollection(postModel::paginate(8));
+});
 

@@ -3,13 +3,13 @@ $(document).ready(function(){
 
    //show all blog posts
    $.ajax({
-          url: base_url+"/api/post",
+          url: base_url+"/api/posts/all",
           method: 'get',
           dataType: 'json',
           success:function(data){
             console.log(data);
             var content="";
-            $.each(data.posts, function(index,post){
+            $.each(data.data, function(index,post){
                var dateOld = post.created_at;
                var dateTimeSplit = dateOld.split(" ");
                var dateSplit = dateTimeSplit[0].split("-");
@@ -30,13 +30,23 @@ $(document).ready(function(){
                             ${post['description']} ...
                            </h3>
                         </a>
-                        <p class="post-meta">Posted by <a href="#">${post.user['name']}</a> on ${myDate}</p>                        
+                        <p class="post-meta">Posted on ${myDate}</p>                        
                      </div>
                   </div>  
                   </div>
-                  <hr>`;
+                  <hr>
+                  `;
+                  
                });
-               $('#indexPosts').html(content)
+                var pagination="";
+                pagination += `
+                   <a href="${data.links.prev}"> Previous page </a>  &nbsp;
+                   <a href="${data.links.next}"> Next page </a>
+                   `;
+                 
+               $('#indexPosts').html(content);
+              // $('#pagination').html(data['links']);
+               $('#pagination').html(pagination);
           },
           error: function(xhr, statusText, error){
             var status = xhr.status;

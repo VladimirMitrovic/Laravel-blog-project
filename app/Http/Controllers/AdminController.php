@@ -108,6 +108,7 @@ class AdminController extends Controller
          // images from text editor
         $detail=$request->input('content');
         $dom = new \DomDocument('1.0', 'UTF-8');
+        libxml_use_internal_errors(true);
         $dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);    
         $images = $dom->getElementsByTagName('img');
         foreach($images as $k => $img){
@@ -134,10 +135,9 @@ class AdminController extends Controller
              $postModel->updated_at = $date;
              try {
                  $postModel->save();
-
-                
-                 return redirect()->back()->with("success", "Post successfully edited!");
-             } catch (QueryException $e) {
+                 return redirect()->back()->with(["message" => "Post successfully edited!"]);
+             }
+             catch (QueryException $e) {
                  \Log::error("Greska pri update-u objave: " . $e->getMessage());
                  return redirect()->back()->with("error", "An error occurred, please try again later");
              }
